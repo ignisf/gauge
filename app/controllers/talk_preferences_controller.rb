@@ -10,6 +10,7 @@ class TalkPreferencesController < ApplicationController
 
   def create
     @talk_preference = TalkPreference.new talk_preference_params
+    @talk_preference.ip_address = current_ip_address
 
     if @talk_preference.save
       render json: {
