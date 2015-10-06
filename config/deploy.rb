@@ -36,7 +36,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :rvm_ruby_version, '2.2.2'
 
-set :puma_bind, ["unix://#{shared_path}/tmp/sockets/puma.sock"]
+set :puma_bind, ["tcp://127.0.0.1:9088"]
 set :puma_init_active_record, true
 set :puma_access_log, "#{shared_path}/log/puma_access.log"
 set :puma_error_log, "#{shared_path}/log/puma_error.log"
