@@ -1,0 +1,17 @@
+li.locale {
+    padding-top: 10px;
+}
+
+span.locale {
+    background: grey;
+    padding: 0.3em 10px 0.3em 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+span.locale:hover {
+    background: #eee;
+}
