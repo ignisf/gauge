@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
     # request.env['HTTP_X_FORWARDED_FOR'] ||
     request.remote_ip
   end
+
+  def sort_seed
+    if session[:random_sort_seed].present?
+      session[:random_sort_seed].to_i
+    else
+      session[:random_sort_seed] = Random.new_seed
+    end
+  end
 end
