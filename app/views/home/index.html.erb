@@ -1,0 +1,41 @@
+<div style="display:none">
+  <div class="event" id="template">
+    <div class="title"></div>
+    <div class="event_type"></div>
+    <div class="abstract"></div>
+  </div>
+</div>
+
+<div class="headline"><%= t 'generic.title' %></div>
+<div class="header">
+  <div class="rightbox">
+    <div title="<%= t 'generic.store_and_submit_changes' %>" class="submit"><%= t 'generic.submit' %></div>
+    <div class="info hidden"><span></span></div>
+    <div class="explainer">
+      <span>
+        <ul>
+          <li>
+            <%= t 'generic.help_us_reduce_the_conflicts' %>
+          </li>
+          <li>
+            <%= t 'generic.click_on_the_talks_you_would_like_to_watch' %>
+          </li>
+          <li>
+            <%= t 'generic.press_submit' %>
+          </li>
+      </span>
+    </div>
+  </div>
+  <div class="leftbox">
+    <input id="filter" type="text" placeholder="<%= t 'generic.filter_events' %>"/>
+    <div class="allboxes">
+      <div class="smallboxes boxer">size</div><div class="mediumboxes boxer">Size</div><div class="largeboxes boxer">SIZE</div>
+      <a class="export-url-a" download="31C3.ics" type="text/calendar" href="#"><div class="export-url hidden">31C3.ics</div></a>
+    </div>
+  </div>
+</div>
+<div class="track" id="12"><h2>Technical</h2><div id="qrcode" class="hidden"></div></div>
+<div class="track" id="10"><h2>OpenBiz</h2></div>
+<div class="track" id="13"><h2>Civic Hacking</h2></div>
+<div class="track" id="14"><h2>Social</h2></div>
+<div class="track" id="15"><h2>Advanced Technical</h2></div>
