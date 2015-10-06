@@ -25,7 +25,7 @@
         });
 
         /* Add callback for submit click */
-        $('.submit').click( function() {
+        $('.event, .submit').click( function() {
             var myapi;
 
             /* Get user's preferences and try to save them locally */
