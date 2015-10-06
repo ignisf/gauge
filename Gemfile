@@ -17,4 +17,9 @@ gem 'pry-rails'
 
 group :development do
   gem 'spring'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
 end
+
+gem 'puma', group: :production
