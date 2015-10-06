@@ -216,8 +216,11 @@
                     if( hour < 10 ) {
                         day--;
                     }
+
+                    t.addClass('small');
+
                     /* Apply attributes to sort events into calendar */
-                    t.addClass('small room_' + item.room_id + ' duration_' + item.duration + ' day_'+day + ' time_' + (hour<10?'0':'') + hour + '' + (mins<10?'0':'') + mins);
+                    // t.addClass(' room_' + item.room_id + ' duration_' + item.duration + ' day_'+day + ' time_' + (hour<10?'0':'') + hour + '' + (mins<10?'0':'') + mins);
 
                     t.click( function(event) {
                         /* Transition for touch devices is highlighted => selected => highlighted ... */
