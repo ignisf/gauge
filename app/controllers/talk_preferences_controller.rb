@@ -1,6 +1,6 @@
 class TalkPreferencesController < ApplicationController
   def index
-    @talks = Talk.all(params: {locale: I18n.locale}).to_a.shuffle(random: Random.new(sort_seed))
+    @talks = Talk.find(:all, from: :halfnarp_friendly, params: {locale: I18n.locale}).to_a.shuffle(random: Random.new(sort_seed))
   end
 
   def show

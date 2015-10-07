@@ -4,6 +4,6 @@ class Talk < ActiveResource::Base
 
   def self.ordered_by_rating
     ratings = Ratings.new
-    all.sort { |left, right| ratings[right.id] <=> ratings[left.id] }
+    find(:all, from: :halfnarp_friendly).sort { |left, right| ratings[right.id] <=> ratings[left.id] }
   end
 end
