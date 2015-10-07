@@ -4,6 +4,6 @@ en:
     submit: Submit
     store_and_submit_changes: Store your changes locally and submit them if possible
     help_us_reduce_the_conflicts: "Help us to reduce the conflicts in OpenFest's schedule"
-    click_on_the_talks_you_would_like_to_watch: Click on the talks you likely would like to watch.
+    click_on_the_talks_you_would_like_to_watch: Click (or tap twice if on mobile device) on the talks you likely would like to watch.
     press_submit: Press submit.
     filter_events: Filter Events
