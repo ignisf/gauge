@@ -22,4 +22,7 @@ group :development do
   gem 'capistrano3-puma'
 end
 
-gem 'puma', group: :production
+group :production do
+  gem 'puma'
+  gem 'pg'
+end
