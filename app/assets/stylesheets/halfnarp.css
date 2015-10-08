@@ -242,7 +242,7 @@ hr.guide {
 }
 
 .selected {
-    background: red !important;
+    background: #4588BA !important;
 }
 .selected.friend {
     background-image:
@@ -257,7 +257,7 @@ hr.guide {
 }
 .selected:hover,
 .friend:hover {
-    background: pink !important;
+    background: #AFDDFF !important;
     color: black;
 }
 .friend {
