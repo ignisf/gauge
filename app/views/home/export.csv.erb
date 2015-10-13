@@ -1,0 +1,3 @@
+<%- headers = ['ID', 'Created at'] + @talks.map(&:id) -%>
+<%= CSV.generate_line headers -%>
+<%= render partial: 'talk_preference', collection: @talk_preferences %>

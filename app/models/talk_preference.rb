@@ -5,6 +5,10 @@ class TalkPreference < ActiveRecord::Base
 
   before_create :assign_new_unique_id
 
+  def include?(id)
+    talks.include? id.to_s
+  end
+
   private
 
   def assign_new_unique_id
