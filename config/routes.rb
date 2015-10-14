@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'ratings' => 'home#ratings'
   get 'export' => 'home#export'
+  get 'conflicts' => 'home#conflicts'
 end

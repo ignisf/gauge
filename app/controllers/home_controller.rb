@@ -11,4 +11,8 @@ class HomeController < ApplicationController
     @talks = Talk.all
     @talk_preferences = TalkPreference.all
   end
+
+  def conflicts
+    @conflict_coefficients = ConflictCoefficient.all
+  end
 end

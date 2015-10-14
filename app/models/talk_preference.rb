@@ -9,6 +9,10 @@ class TalkPreference < ActiveRecord::Base
     talks.include? id.to_s
   end
 
+  def include_all?(ids)
+    ids.all? { |id| include? id }
+  end
+
   private
 
   def assign_new_unique_id
