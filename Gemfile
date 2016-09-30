@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+gem 'rails', '5.0.0.1'
 
 gem 'sqlite3'
 gem 'sass-rails'
@@ -11,7 +11,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder'
 
-gem 'activeresource', require: 'active_resource'
+gem 'activeresource', github: 'rails/activeresource', require: 'active_resource'
 
 gem 'pry-rails'
 
