@@ -1,5 +1,5 @@
 class Talk < ActiveResource::Base
-  self.site = "https://cfp.openfest.org/api/conferences/2"
+  self.site = "https://cfp.openfest.org/api/conferences/3"
   self.element_name = "event"
 
   def self.ordered_by_rating
