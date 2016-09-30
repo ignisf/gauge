@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'ratings' => 'home#ratings'
   get 'export' => 'home#export'
   get 'conflicts' => 'home#conflicts'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
