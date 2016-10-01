@@ -1,5 +1,5 @@
 <div style="display:none">
-  <div class="event" id="template">
+  <div id="template">
     <div class="title"></div>
     <div class="event_type"></div>
     <div class="abstract"></div>
@@ -49,11 +49,24 @@
   <div class="leftbox">
     <input id="filter" type="text" placeholder="<%= t 'generic.filter_events' %>"/>
     <div class="allboxes">
-      <div class="smallboxes boxer">size</div><div class="mediumboxes boxer">Size</div><div class="largeboxes boxer">SIZE</div>
+      <div class="vsmallboxes boxer">size</div><div class="vmediumboxes boxer">Size</div><div class="vlargeboxes boxer">SIZE</div>
       <a class="export-url-a" download="31C3.ics" type="text/calendar" href="#"><div class="export-url hidden">31C3.ics</div></a>
     </div>
   </div>
 </div>
+
+<div class="day_1 room-label room1">Saal 1</div><div class="day_1 room-label room2">Saal 2</div><div class="day_1 room-label roomg">Saal G</div><div class="day_1 room-label room6">Saal 6</div>
+<div class="day_2 room-label room1 ">Saal 1</div><div class="day_2 room-label room2 ">Saal 2</div><div class="day_2 room-label roomg ">Saal G</div><div class="day_2 room-label room6 ">Saal 6</div>
+<div class="day_3 room-label room1 ">Saal 1</div><div class="day_3 room-label room2 ">Saal 2</div><div class="day_3 room-label roomg ">Saal G</div><div class="day_3 room-label room6 ">Saal 6</div>
+<div class="day_4 room-label room1 ">Saal 1</div><div class="day_4 room-label room2 ">Saal 2</div><div class="day_4 room-label roomg ">Saal G</div><div class="day_4 room-label room6 ">Saal 6</div>
+
+<div class=" time_1500 duration_3600 guide pause "></div>
+<div class=" time_1930 duration_3600 guide pause "></div>
+<div class=" time_2030 duration_inf guide ende room1 day_4 "></div>
+
+<div class="wholeday room1 day_1 guide"></div>
+<div class="wholeday room1 day_3 guide"></div>
+
 <div class="track" id="17"><h2>Technical</h2><div id="qrcode" class="hidden"></div></div>
 <div class="track" id="22"><h2>OpenBiz</h2></div>
 <div class="track" id="18"><h2>Civic Hacking</h2></div>
