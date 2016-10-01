@@ -16,6 +16,7 @@
         window.all_events = new Object();
         var myuid, mypid, newfriend = new Object();
 
+        /* Add poor man's type ahead filtering */
         $.extend($.expr[':'], {
             'containsi': function(elem, i, match, array)
             {
@@ -183,6 +184,9 @@
             mypid     = localStorage['OpenFest-gauge-pid'] || '';
         } catch(err) {
         }
+
+        /* Initially display as list */
+        toggle_grid(true);
 
         /* Fetch list of lectures to display */
         $.getJSON( halfnarpAPI, { locale: $('html').attr('lang') })
