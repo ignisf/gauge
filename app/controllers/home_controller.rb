@@ -9,8 +9,7 @@ class HomeController < ApplicationController
   end
 
   def export
-    @talks = Talk.find(:all, from: :halfnarp_friendly)
-    @talk_preferences = TalkPreference.all
+    @talk_preferences = TalkPreference.this_years
   end
 
   def conflicts

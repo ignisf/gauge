@@ -13,6 +13,11 @@ class TalkPreference < ActiveRecord::Base
     ids.all? { |id| include? id }
   end
 
+  def self.this_years
+    timespan = Time.now.change(month: 1, day: 1, hour: 0)..Time.now.change(month: 12, day: 1, hour: 0)
+    where created_at: timespan
+  end
+
   private
 
   def assign_new_unique_id
