@@ -2,7 +2,7 @@ class ConflictCoefficient
   attr_reader :left, :right, :conflicts
 
   def self.all
-    talk_combinations = Talk.all.map(&:id).combination(2)
+    talk_combinations = Talk.find(:all, from: :halfnarp_friendly).map(&:id).combination(2)
     talk_preferences = TalkPreference.all
     talk_preferences_count = TalkPreference.count
 

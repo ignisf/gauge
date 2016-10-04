@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
 
   def export
-    @talks = Talk.all
+    @talks = Talk.find(:all, from: :halfnarp_friendly)
     @talk_preferences = TalkPreference.all
   end
 
