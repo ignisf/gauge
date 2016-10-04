@@ -3,8 +3,8 @@ class ConflictCoefficient
 
   def self.all
     talk_combinations = Talk.find(:all, from: :halfnarp_friendly).map(&:id).combination(2)
-    talk_preferences = TalkPreference.all
-    talk_preferences_count = TalkPreference.count
+    talk_preferences = TalkPreference.this_years
+    talk_preferences_count = talk_preferences.count
 
     talk_combinations.map do |talks|
       conflicts = talk_preferences.select do |talk_preference|
