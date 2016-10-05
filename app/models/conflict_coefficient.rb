@@ -7,6 +7,17 @@ class ConflictCoefficient
     end
   end
 
+  def self.all_as_hash
+    conflicts_hash = {}
+
+    all.each do |coefficient|
+      conflicts_hash[coefficient.left] = {} unless conflicts_hash[coefficient.left]
+      conflicts_hash[coefficient.left][coefficient.right] = coefficient.per_cent
+    end
+
+    conflicts_hash
+  end
+
   def conflicts
     @conflicts ||= talk_preferences.select do |talk_preference|
       talk_preference.include_all? [@left, @right]
