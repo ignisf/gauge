@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.event.friend {
+    background: yellow !important;
+}
+
+.event.selected {
+    background: #4588BA !important;
+}
+
+.selected:hover,
+.friend:hover {
+    background: #AFDDFF !important;
+}
