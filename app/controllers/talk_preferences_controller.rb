@@ -26,20 +26,25 @@ class TalkPreferencesController < ApplicationController
   def update
     @talk_preference = TalkPreference.find params[:id]
 
-    if @talk_preference.update talk_preference_params
-      render json: {
-               update_url: talk_preference_url(@talk_preference),
-               hashed_uid: @talk_preference.hashed_unique_id,
-               uid: @talk_preference.id
-             }
-    else
-      render status: :unprocessable_entity
+    @talk_preference.transaction do
+      @talk_preference.selected_talks.destroy_all
+
+      if @talk_preference.update talk_preference_params
+        render json: {
+                      update_url: talk_preference_url(@talk_preference),
+                      hashed_uid: @talk_preference.hashed_unique_id,
+                      uid: @talk_preference.id
+                     }
+      else
+        head :unprocessable_entity
+        raise ActiveRecord::Rollback
+      end
     end
   end
 
   private
 
   def talk_preference_params
-    params.require(:talk_preference).permit(talks: [])
+    params.require(:talk_preference).permit(selected_talks_attributes: [:talk_id])
   end
 end

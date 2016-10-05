@@ -41,7 +41,9 @@
             }
 
             /* Convert preferences to JSON and post them to backend */
-            var request = {talk_preference: {'talks': ids}};
+            var request = {talk_preference: {'selected_talks_attributes': ids.map(function(talk_id) {
+                return {"talk_id": talk_id};
+            })}};
             if( !myapi || !myapi.length ) {
                 /* If we do not have resource URL, post data and get resource */
                 $.post( halfnarpAPI, request, function( data ) {

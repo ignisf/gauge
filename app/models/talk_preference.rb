@@ -1,7 +1,7 @@
 class TalkPreference < ActiveRecord::Base
-  has_many :selected_talks
-
   self.primary_key = :unique_id
+  has_many :selected_talks
+  accepts_nested_attributes_for :selected_talks
 
   before_create :assign_new_unique_id
 
