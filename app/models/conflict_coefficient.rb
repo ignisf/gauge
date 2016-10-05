@@ -1,25 +1,33 @@
 class ConflictCoefficient
-  attr_reader :left, :right, :conflicts
+  attr_reader :left, :right
 
   def self.all
-    talk_combinations = Talk.find(:all, from: :halfnarp_friendly).map(&:id).combination(2)
-    talk_preferences = TalkPreference.this_years
-    talk_preferences_count = talk_preferences.count
-
-    talk_combinations.map do |talks|
-      conflicts = talk_preferences.select do |talk_preference|
-        talk_preference.include_all? talks
-      end.count
-
-      ConflictCoefficient.new talks.first, talks.last, conflicts, talk_preferences_count
+    Talk.find(:all, from: :halfnarp_friendly).map(&:id).combination(2).map do |talks|
+      ConflictCoefficient.new talks.first, talks.last
     end
   end
 
-  def initialize(left, right, conflicts, total_votes)
-    @left, @right, @conflicts, @total_votes = left, right, conflicts, total_votes
+  def conflicts
+    @conflicts ||= talk_preferences.select do |talk_preference|
+      talk_preference.include_all? [@left, @right]
+    end.count
+  end
+
+  def total_votes
+    talk_preferences.count
+  end
+
+  def initialize(left, right)
+    @left, @right = left, right
   end
 
   def per_cent
-    Rational(100 * @conflicts, @total_votes).to_f
+    Rational(100 * conflicts, total_votes).to_f
+  end
+
+  private
+
+  def talk_preferences
+    @talk_preferences ||= TalkPreference.this_years
   end
 end
