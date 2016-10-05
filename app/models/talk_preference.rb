@@ -3,8 +3,6 @@ class TalkPreference < ActiveRecord::Base
 
   self.primary_key = :unique_id
 
-  serialize :talks, Array
-
   before_create :assign_new_unique_id
 
   def include?(id)
@@ -18,6 +16,10 @@ class TalkPreference < ActiveRecord::Base
   def self.this_years
     timespan = Time.now.change(month: 1, day: 1, hour: 0)..Time.now.change(month: 12, day: 1, hour: 0)
     where created_at: timespan
+  end
+
+  def talks
+    selected_talks.pluck :talk_id
   end
 
   private
