@@ -1,4 +1,6 @@
 class TalkPreference < ActiveRecord::Base
+  has_many :selected_talks
+
   self.primary_key = :unique_id
 
   serialize :talks, Array
