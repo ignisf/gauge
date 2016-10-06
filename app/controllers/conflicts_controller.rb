@@ -1,5 +1,5 @@
 class ConflictsController < ApplicationController
   def index
-    @talks = Talk.find(:all, from: :halfnarp_friendly).sort_by(&:title)
+    @talks = Talk.ordered_by_rating
   end
 end
