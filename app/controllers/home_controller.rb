@@ -11,8 +11,4 @@ class HomeController < ApplicationController
   def export
     @talk_preferences = TalkPreference.this_years
   end
-
-  def conflicts
-    @conflict_coefficients = ConflictCoefficient.all
-  end
 end
