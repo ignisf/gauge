@@ -9,6 +9,6 @@ class HomeController < ApplicationController
   end
 
   def export
-    @talk_preferences = TalkPreference.this_years
+    @talk_preferences = TalkPreference.this_years.eager_load(:selected_talks)
   end
 end
