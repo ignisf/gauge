@@ -10,6 +10,15 @@
     </tr>
   </thead>
   <tbody>
-    <%= render partial: 'talk', collection: @talks %>
+    <% @talks.each do |talk| %>
+      <tr>
+        <td><%= talk.id %></td>
+        <td><%= talk.event_type.name %></td>
+        <td><%= talk.title %></td>
+        <td><%= talk.subtitle %></td>
+        <td><%= @ratings[talk.id] %></td>
+        <td><%= "%.2f%" % Rational(100 * @ratings[talk.id], @votes_count).to_f %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def ratings
     @talks = Talk.ordered_by_rating
     @ratings = Ratings.new
-    @votes_count = TalkPreference.count
+    @votes_count = TalkPreference.this_years.count
   end
 
   def export
