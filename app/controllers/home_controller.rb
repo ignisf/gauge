@@ -11,4 +11,8 @@ class HomeController < ApplicationController
   def export
     @talk_preferences = TalkPreference.this_years.eager_load(:selected_talks)
   end
+
+  def summary
+    @summary = Summary.new params[:summary]
+  end
 end

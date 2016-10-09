@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'ratings' => 'home#ratings'
   get 'export' => 'home#export'
-  resources :conflicts
+  get 'summary' => 'home#summary'
+  resources :conflicts do
+    collection do
+      get 'pivot'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
