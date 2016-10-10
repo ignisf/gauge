@@ -1,3 +1,0 @@
-<%- headers = ['ID', 'Type', 'Title', 'Subtitle', 'Votes', '%'] -%>
-<%= CSV.generate_line headers -%>
-<%= render partial: 'talk', collection: @talks %>

@@ -1,3 +1,0 @@
-<% talk_preference.talks.each do |talk| %>
-  <%= CSV.generate_line([talk_preference.hashed_unique_id, talk_preference.created_at, talk]).html_safe -%>
-<% end %>

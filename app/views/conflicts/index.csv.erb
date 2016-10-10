@@ -1,5 +1,0 @@
-<%- csv_headers = ['Event'] + @talks.map { |talk| [talk.title, talk.id].join(' ') } -%>
-<%= CSV.generate_line(csv_headers).html_safe -%>
-<%- @talks.each do |left| -%>
-  <%= CSV.generate_line([[left.title, left.id].join(' ')] + @talks.map { |right| left.id == right.id ? '-' : ConflictCoefficient.new(left.id, right.id).per_cent}).html_safe -%>
-<%- end -%>

@@ -1,1 +1,0 @@
-<%= CSV.generate_line([talk.id, talk.event_type.name, talk.title, talk.subtitle, @ratings[talk.id], "%.2f%" % Rational(100 * @ratings[talk.id], @votes_count).to_f]).html_safe -%>
