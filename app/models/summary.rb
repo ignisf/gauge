@@ -18,6 +18,6 @@ class Summary
   def conflicts
     @other_talk_ids.map do |right|
       [right, ConflictCoefficient.new(@talk_id, right).conflicts]
-    end.to_h
+    end.sort_by(&:last).to_h
   end
 end

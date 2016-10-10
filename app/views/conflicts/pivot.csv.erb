@@ -1,0 +1,5 @@
+<%- headers = ['left', 'right', 'conflicts', '%'] -%>
+<%= CSV.generate_line headers -%>
+<%- @conflict_coefficients.each do |conflict_coefficient| -%>
+  <%= CSV.generate_line([conflict_coefficient.left, conflict_coefficient.right, conflict_coefficient.conflicts, conflict_coefficient.per_cent]).html_safe -%>
+<%- end -%>

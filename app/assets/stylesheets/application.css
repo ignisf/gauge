@@ -26,3 +26,7 @@
 .friend:hover {
     background: #AFDDFF !important;
 }
+
+tr.rating:hover {
+    background-color: green;
+}
