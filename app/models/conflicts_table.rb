@@ -11,8 +11,16 @@ class ConflictsTable
     other_talks_ids.map do |right|
       {
        talk_id: right,
-       number_of_conflicts: Conflicts.new(left: talk_id, right: right).conflicts
+       number_of_conflicts: conflicts_hash[right] || 0
       }
     end
+  end
+
+  private
+
+  def conflicts_hash
+    @conflicts_hash ||= Conflicts.where(left: talk_id, right: other_talks_ids).map do |conflicts|
+      [conflicts.right, conflicts.conflicts]
+    end.to_h
   end
 end
