@@ -1,9 +1,9 @@
 class ConflictsForTalk < ApplicationRecord
   def self.most
-    first
+    order(conflicts: :desc).first
   end
 
   def self.least
-    last
+    order(conflicts: :asc).first
   end
 end
