@@ -9,6 +9,14 @@ class Summary
                                          .uniq.count
   end
 
+  def most_conflicts
+    ConflictsForTalk.where(talk_id: talk_ids).most.conflicts
+  end
+
+  def least_conflicts
+    ConflictsForTalk.where(talk_id: talk_ids).least.conflicts
+  end
+
   def ranking
     @ranking ||= Ranking.new(talk_ids: talk_ids).ranking
   end
