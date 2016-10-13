@@ -10,14 +10,28 @@ class Summary
   end
 
   def most_conflicts
-    ConflictsForTalk.where(talk_id: talk_ids).most.conflicts
+    Conflicts.where(left: talk_ids, right: talk_ids).most.conflicts
   end
 
   def least_conflicts
-    ConflictsForTalk.where(talk_id: talk_ids).least.conflicts
+    if least_conflicts_for_single_talk == 0
+      0
+    else
+      least_conflicts_between_two_talks
+    end
   end
 
   def ranking
     @ranking ||= Ranking.new(talk_ids: talk_ids).ranking
+  end
+
+  private
+
+  def least_conflicts_for_single_talk
+    ConflictsForTalk.where(talk_id: talk_ids).least.conflicts
+  end
+
+  def least_conflicts_between_two_talks
+    Conflicts.where(left: talk_ids, right: talk_ids).least.conflicts
   end
 end
