@@ -25,6 +25,10 @@ class Summary
     @ranking ||= Ranking.new(talk_ids: talk_ids).ranking
   end
 
+  def conflicts
+    @conflicts ||= ConflictsSummary.new(talk_ids: talk_ids).conflicts
+  end
+
   private
 
   def least_conflicts_for_single_talk
