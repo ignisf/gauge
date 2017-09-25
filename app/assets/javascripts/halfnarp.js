@@ -230,6 +230,7 @@
                             $( this ).toggleClass('selected');
                             $('.info').addClass('hidden');
                         }
+                        $('.submit').click();
                         event.stopPropagation();
                     });
                     /* Put new event into DOM tree. Track defaults to 'Other' */
