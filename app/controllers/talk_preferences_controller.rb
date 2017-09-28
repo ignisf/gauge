@@ -26,8 +26,8 @@ class TalkPreferencesController < ApplicationController
   def update
     @talk_preference = TalkPreference.find params[:id]
 
-    @talk_preference.transaction do
-      @talk_preference.selected_talks.destroy_all
+    @talk_preference.with_lock do
+      SelectedTalk.where(talk_preference_id: @talk_preference.id).delete_all
 
       if params[:talk_preference].blank? || @talk_preference.update(talk_preference_params)
         render json: {
