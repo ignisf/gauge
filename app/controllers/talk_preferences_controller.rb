@@ -29,12 +29,12 @@ class TalkPreferencesController < ApplicationController
     @talk_preference.transaction do
       @talk_preference.selected_talks.destroy_all
 
-      if @talk_preference.update talk_preference_params
+      if params[:talk_preference].blank? || @talk_preference.update(talk_preference_params)
         render json: {
-                      update_url: talk_preference_url(@talk_preference),
-                      hashed_uid: @talk_preference.hashed_unique_id,
-                      uid: @talk_preference.id
-                     }
+                 update_url: talk_preference_url(@talk_preference),
+                 hashed_uid: @talk_preference.hashed_unique_id,
+                 uid: @talk_preference.id
+               }
       else
         head :unprocessable_entity
         raise ActiveRecord::Rollback
