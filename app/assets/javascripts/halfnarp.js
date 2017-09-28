@@ -222,6 +222,7 @@
                             if ( $( this ).hasClass('highlighted') ) {
                                 $( this ).toggleClass('selected');
                                 $('.info').addClass('hidden');
+                                $('.submit').click();
                             } else {
                                 $('.highlighted').removeClass('highlighted');
                                 $( this ).addClass('highlighted');
@@ -229,8 +230,8 @@
                         } else {
                             $( this ).toggleClass('selected');
                             $('.info').addClass('hidden');
+                            $('.submit').click();
                         }
-                        $('.submit').click();
                         event.stopPropagation();
                     });
                     /* Put new event into DOM tree. Track defaults to 'Other' */
