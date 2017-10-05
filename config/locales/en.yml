@@ -7,3 +7,5 @@ en:
     click_on_the_talks_you_would_like_to_watch: Click (or tap twice if on mobile device) on the talks you likely would like to watch.
     press_submit: Press submit.
     filter_events: Filter Events
+    status_success: Your preferences have been submitted
+    status_failed: Your preferences could not be submitted
