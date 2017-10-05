@@ -17,3 +17,7 @@
 /tmp
 db/schema.rb
 config/secrets.yml
+
+# Ignore JetBrains IDE
+/.idea
+/gauge.iml

@@ -2,6 +2,29 @@ body {
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
 }
 
+.status {
+    position: fixed;
+    z-index: 1;
+    transition: opacity 0.6s;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity:0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    box-shadow: 0 0 5px black;
+}
+
+.status.shown {
+    opacity: 1;
+}
+
+.status span {
+  display: none;
+}
+
 .header {
     min-width: 640px;
 }

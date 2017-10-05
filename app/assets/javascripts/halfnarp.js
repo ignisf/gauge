@@ -1,4 +1,17 @@
 (function() {
+    function show_status(status) {
+        var container = $('.status');
+        var span = container.find(status ? '.success' : '.failed');
+
+        container.find('span').hide();
+        span.show();
+        container.addClass('shown');
+
+        setTimeout(function() {
+          container.removeClass('shown');
+        }, 3000);
+    }
+
     function toggle_grid(whichDay) {
         var vclasses= ['in-list', 'in-calendar onlyday1', 'in-calendar onlyday2', 'in-calendar onlyday3',
                        'in-calendar onlyday4', 'in-calendar alldays'];
@@ -47,8 +60,6 @@
             if( !myapi || !myapi.length ) {
                 /* If we do not have resource URL, post data and get resource */
                 $.post( halfnarpAPI, request, function( data ) {
-                    $('.info span').text('submitted');
-                    $('.info').removeClass('hidden');
                     try {
                         localStorage['OpenFest-gauge-api'] = data['update_url'];
                         localStorage['OpenFest-gauge-pid'] = mypid = data['hashed_uid'];
@@ -56,8 +67,7 @@
                         window.location.hash = mypid;
                     } catch(err) {}
                 }, 'json' ).fail(function() {
-                    $('.info span').text('failed :(');
-                    $('.info').removeClass('hidden');
+                    show_stauts(false);
                 });
             } else {
                 /* If we do have a resource URL, update resource */
@@ -71,11 +81,9 @@
                     if( localStorage['OpenFest-gauge-pid'] ) {
                         window.location.hash = localStorage['OpenFest-gauge-pid'];
                     }
-                    $('.info span').text('updated');
-                    $('.info').removeClass('hidden');
-                }).fail(function(msg) {
-                    $('.info span').text('failed');
-                    $('.info').removeClass('hidden');
+                    show_status(true);
+                }).fail(function() {
+                  show_stauts(false);
                 });
             }
 
