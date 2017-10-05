@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.6.1'
+lock '3.9.1'
 
 set :application, 'gauge'
 set :repo_url, 'https://github.com/OpenFest/gauge.git'
@@ -35,13 +35,15 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :rvm_ruby_version, '2.3.1'
+set :rvm_ruby_version, '2.4.1'
 
 set :puma_bind, ["tcp://127.0.0.1:9088"]
 set :puma_init_active_record, true
 set :puma_access_log, "#{shared_path}/log/puma_access.log"
 set :puma_error_log, "#{shared_path}/log/puma_error.log"
 set :puma_preload_app, true
+set :puma_threads, [0, 16]
+set :puma_workers, 0
 
 set :nginx_sites_available_path, "#{shared_path}"
 set :nginx_sites_enabled_path, "/tmp"
