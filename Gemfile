@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.6'
+gem 'rails', '~> 5.1.6'
 
 gem 'sqlite3'
 gem 'sass-rails'
@@ -15,11 +15,14 @@ gem 'activeresource', github: 'rails/activeresource', require: 'active_resource'
 
 gem 'pry-rails'
 
+# gem 'spreadsheet_architect'
+
 group :development do
   gem 'spring'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
+  gem 'listen'
 end
 
 group :production do
