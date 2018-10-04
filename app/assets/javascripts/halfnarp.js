@@ -67,7 +67,7 @@
                         window.location.hash = mypid;
                     } catch(err) {}
                 }, 'json' ).fail(function() {
-                    show_stauts(false);
+                    show_status(false);
                 });
             } else {
                 /* If we do have a resource URL, update resource */
