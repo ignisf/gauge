@@ -83,7 +83,7 @@
                     }
                     show_status(true);
                 }).fail(function() {
-                  show_stauts(false);
+                  show_status(false);
                 });
             }
 
