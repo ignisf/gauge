@@ -22,6 +22,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
+  gem 'ed25519'
   gem 'listen'
 end
 

@@ -99,6 +99,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    ed25519 (1.2.4)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -217,6 +218,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano3-puma
   coffee-rails
+  ed25519
   jbuilder
   jquery-rails
   listen
