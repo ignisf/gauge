@@ -1,4 +1,4 @@
-class CreateTalkPreferences < ActiveRecord::Migration
+class CreateTalkPreferences < ActiveRecord::Migration[4.2]
   def change
     create_table :talk_preferences, id: false do |t|
       t.string :unique_id, null: false
