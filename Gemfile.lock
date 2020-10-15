@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/rails/activeresource.git
-  revision: de9deedf06a554668caa5bf7def80010759e312b
+  remote: https://github.com/rails/activeresource.git
+  revision: dedecf90996622776b7aa0e54957ffc8fb3ac2f9
   specs:
-    activeresource (5.1.0)
+    activeresource (5.1.1)
       activemodel (>= 5.0, < 7)
       activemodel-serializers-xml (~> 1.0)
       activesupport (>= 5.0, < 7)
@@ -232,4 +232,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
