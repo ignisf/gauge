@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.11.2'
+lock '3.14.1'
 
 set :application, 'gauge'
 set :repo_url, 'https://github.com/OpenFest/gauge.git'
