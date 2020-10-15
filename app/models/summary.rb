@@ -10,7 +10,7 @@ class Summary
   end
 
   def most_conflicts
-    Conflicts.where(left: talk_ids, right: talk_ids).most.conflicts
+    Conflicts.where(left: talk_ids, right: talk_ids).most&.conflicts || 0
   end
 
   def least_conflicts
@@ -32,10 +32,10 @@ class Summary
   private
 
   def least_conflicts_for_single_talk
-    ConflictsForTalk.where(talk_id: talk_ids).least.conflicts
+    ConflictsForTalk.where(talk_id: talk_ids).least&.conflicts || 0
   end
 
   def least_conflicts_between_two_talks
-    Conflicts.where(left: talk_ids, right: talk_ids).least.conflicts
+    Conflicts.where(left: talk_ids, right: talk_ids).least&.conflicts || 0
   end
 end
