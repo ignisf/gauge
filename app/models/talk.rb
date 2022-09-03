@@ -1,7 +1,7 @@
 class Talk < ActiveResource::Base
   has_many :selections, class_name: 'SelectedTalk'
 
-  self.site = "https://cfp.openfest.org/api/conferences/7"
+  self.site = "https://cfp.openfest.org/api/conferences/9"
   self.element_name = "event"
 
   def self.ordered_by_id
