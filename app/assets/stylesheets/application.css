@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.event {
+    user-select: none;
+}
+
 .event.friend {
     background: yellow !important;
 }
