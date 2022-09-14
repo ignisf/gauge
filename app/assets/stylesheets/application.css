@@ -16,6 +16,7 @@
 
 .event {
     user-select: none;
+    touch-action: manipulation;
 }
 
 .event.friend {
