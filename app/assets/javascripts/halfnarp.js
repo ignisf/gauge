@@ -223,10 +223,8 @@
 
                     /* Apply attributes to sort events into calendar */
                     // t.addClass(' room_' + item.room_id + ' duration_' + item.duration + ' day_'+day + ' time_' + (hour<10?'0':'') + hour + '' + (mins<10?'0':'') + mins);
-
-                    t.click( function(event) {
-                        /* Transition for touch devices is highlighted => selected => highlighted ... */
-                        if( isTouch ) {
+                    if( isTouch ) {
+                        t.click( function(event) {
                             if ( $( this ).hasClass('highlighted') ) {
                                 $( this ).toggleClass('selected');
                                 $('.info').addClass('hidden');
@@ -235,13 +233,23 @@
                                 $('.highlighted').removeClass('highlighted');
                                 $( this ).addClass('highlighted');
                             }
-                        } else {
+                            event.stopPropagation();
+                        });
+
+                        $(t).bind('taphold', function(event) {
                             $( this ).toggleClass('selected');
                             $('.info').addClass('hidden');
                             $('.submit').click();
-                        }
-                        event.stopPropagation();
-                    });
+                        });
+                    } else {
+                        t.click( function(event) {
+                            $( this ).toggleClass('selected');
+                            $('.info').addClass('hidden');
+                            $('.submit').click();
+                            event.stopPropagation();
+                        });
+                    }
+
                     /* Put new event into DOM tree. Track defaults to 'Other' */
                     var track = item.track_id.toString();
                     var d = $( '#' + track );
