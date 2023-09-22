@@ -14,6 +14,7 @@ gem 'jbuilder'
 gem 'activeresource', github: 'rails/activeresource', require: 'active_resource'
 
 gem 'pry-rails'
+gem "rack-attack", "~> 6.7"
 
 # gem 'spreadsheet_architect'
 
